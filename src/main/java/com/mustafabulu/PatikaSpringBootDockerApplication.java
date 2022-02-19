@@ -8,7 +8,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 
 
-@SpringBootApplication
+//security dahil etmemeeekkk icin
+@SpringBootApplication(exclude =
+        {
+                org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration.class,
+                org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration.class
+        }
+)
 
 @EnableJpaAuditing(auditorAwareRef = "auditorAware")
 @Log4j2

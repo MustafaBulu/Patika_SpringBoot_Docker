@@ -1,0 +1,16 @@
+package com.mustafabulu.bean;
+
+import com.mustafabulu.audit.AuditorAwareImpl;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.domain.AuditorAware;
+
+@Configuration
+public class AuditAwareBean {
+
+    @Bean
+    public AuditorAware<String> auditorAware(){
+
+        return new AuditorAwareImpl();
+    }
+}
